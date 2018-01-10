@@ -2,7 +2,7 @@ FROM centos:7
 
 RUN yum install wget -y && yum clean all
 RUN wget https://copr.fedorainfracloud.org/coprs/librehat/shadowsocks/repo/epel-7/librehat-shadowsocks-epel-7.repo -O /etc/yum.repos.d/librehat-shadowsocks-epel-7.repo
-RUN yum update && yum install shadowsocks-libev -y && yum clean all
+RUN yum install epel-release -y && yum update -y && yum install shadowsocks-libev -y && yum clean all
 
 ENV SERVER_ADDR 0.0.0.0
 ENV SERVER_PORT 8388
